@@ -1,4 +1,4 @@
-const produtos = [
+const listaProdutos = [
     {
         nome: 'Banana',
         preco: 2,
@@ -18,7 +18,7 @@ const produtos = [
         preco: 2,
         secao: 'Hortifruti',
         categoria: 'fruta',
-        img: './src/img/maça.png'
+        img: './src/img/zyro-image.png'
     },
     {
         nome: 'Pão',

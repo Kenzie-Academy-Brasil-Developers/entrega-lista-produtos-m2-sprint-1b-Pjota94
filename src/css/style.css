@@ -1,107 +1,208 @@
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+/*-----Header-----*/
 
-/* CABEÇALHO */
-.filtersContainer {
+#header{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 30px;
+    height: 55px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 40px -20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 39px;
 }
 
-.estiloGeralBotoes{
-    border: none;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: block;
-    font-size: 0.9rem;
+.text-header{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
 }
 
-.estiloGeralBotoes--mostrarTodos {
-    color: black;
-    background-color: #d3d3d3;
-}
+/*-----Nav-----*/
 
-.estiloGeralBotoes--filtrarHortifruti {
-    background-color: tomato;
-    color: white;
-}
-
-.containerBuscaPorNome {
+#nav{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 44px;
 }
 
-.campoBuscaPorNome {
-    border-radius: 5px 0 0 5px;
-    border: 1px solid black;
-    padding: 0 10px;
+.todos, .hortifruit, .panificadora, .laticinios{
+    background: rgba(18, 184, 134, 0.05);
+    border: 1.5px solid rgba(18, 184, 134, 0.05);
+    border-radius: 8px;
+    height: 52px;
+    background-color: #12B8860D;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #12B886;
+    margin-right: 12px;
+    cursor: pointer;
 }
 
-.estiloGeralBotoes--botaoBuscaPorNome {
-    background-color: rgb(17, 17, 20);
+.todos:hover{
+    background-color: #12B886;
     color: white;
-    border-radius: 0 5px 5px 0;
 }
 
-/* CONTEÚDO */
-main{}
-
-.containerListaProdutos {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+.hortifruit:hover{
+    background-color: #12B886;
+    color: white;
+        
 }
 
-.containerListaProdutos ul {
-    list-style: none;
-    text-align: center;
+.panificadora:hover{
+    background-color: #12B886;
+    color: white;
+}
+
+.laticinios:hover{
+    background-color: #12B886;
+    color: white;
+}
+
+#search{
+    background-color: #F1F3F5;
+    border-radius: 8px;
+    height: 52px;
+    width: 300px;
+}
+
+#search::placeholder{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #515252;
+    padding-left: 20px;
+}
+
+.button-search{
+    width: 59px;
+    height: 52px;
+    background: #12B886;
+    border: 1.5px solid #12B886;
+    border-radius: 8px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/*-----Container Price-----*/
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.container-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1171px;
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    align-items: center
+}
+
+.container-alert{
+    display: flex;
+}
+
+.icone-alert{
+    width: 24px;
+    height: 24px;
+}
+
+.text-price{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212529;
+    margin-left: 17px;
+    margin-top: 5px;
+}
+
+.box-price{
+    width: 82px;
+    height: 34px;
+    background: #212529;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.containerListaProdutos ul li {
-    color: black;
-    font-weight: bold;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    transition: ease-in-out .1s;
-    width: 20%;
-}
-
-.containerListaProdutos ul li:hover {
-    box-shadow: 3px 3px 13px 1px rgb(146 146 146);
-}
-
-.containerListaProdutos ul li img {
-    width: 100%;
-    max-width: 80px;
-}
-
-.containerListaProdutos ul li h3 {
-    font-size: 1.5rem;
-}
-
-.containerListaProdutos ul li p {
-    font-size: 1.5rem;
-}
-.containerListaProdutos ul li span {
-    font-size: 0.8rem;
+.span-price{
+    color: white;
+    font-family: 'Poppins';
+    font-style: normal;
     font-weight: 500;
-    margin-top: 10px;
-    display: inline-block;
+    font-size: 14px;
+    margin-right: 3px;
 }
 
-/* PREÇO TOTAL */
-.containerPrecoTotal{
-    text-align: center;
+.value-price{
+    color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
 }
-.containerPrecoTotal p{
-    font-size: 1.4rem;
-    font-weight: 600;
+
+/*-----Container Products-----*/
+
+.section-products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.containerPrecoTotal p span{}
+
+.container-products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 1171px;
+    
+}
+
+.card-product{
+    margin-bottom: 50px;
+}
+
+.nome-product{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #212529;
+    margin: 16px 0px
+}
+
+.category-product{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #868E96;
+    margin-bottom: 16px;
+}
+
+
+.preco{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #212529;
+}

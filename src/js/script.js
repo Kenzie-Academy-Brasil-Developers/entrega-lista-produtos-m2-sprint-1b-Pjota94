@@ -1,101 +1,164 @@
-const container = document.querySelector('.containerListaProdutos');
+function criarCard(produto){
+    const selecionarContainer = document.querySelector('.container-products')
 
-const ul = document.querySelector('ul');
-
-function montarListaDeProdutos(listaProdutos){
-    
-    ul.innerHTML = ''
-    
-    
-    listaProdutos.forEach((produto) => {
-
-        const li = document.createElement('li');
-        const img = document.createElement('img');
-        const h3 = document.createElement('h3');
-        const p = document.createElement('p');
-        const span = document.createElement('span');
-
-        
-
-        img.src = produto.img;
-        img.atl = produto.nome;
-        h3.innerText = produto.nome;
-        p.innerText = produto.preco;
-        span.innerText = produto.secao;
-
-        
-
-        li.appendChild(img);
-        li.appendChild(h3)
-        li.appendChild(p)
-        li.appendChild(span)
-
-        
-
-        ul.appendChild(li)
-        
-    });
-    somarValores(listaProdutos)
+    const card = cardCompleto(produto)
+    selecionarContainer.appendChild(card)
 }
 
-montarListaDeProdutos(listaProdutos)
 
+function cardCompleto(produto){
+    const criarContainer = document.createElement('div'); 
+    criarContainer.classList.add('card-product');
 
-function filtrarHortifruti(){
+    const criarImagem = document.createElement('img');
+    criarImagem.src = produto.img;
     
-    const listaHortifruti = listaProdutos.filter((produto) => {
-        return produto.secao === 'Hortifruti';
-    });
+    const criarNome = document.createElement('p');
+    criarNome.classList.add('nome-product');
+    criarNome.innerText = produto.nome;
+    
+    const criarCategoria = document.createElement('p');
+    criarCategoria.classList.add('category-product');
+    criarCategoria.innerText = produto.secao;
 
-    montarListaDeProdutos(listaHortifruti)
+    criarContainer.append(criarImagem,criarNome,criarCategoria,cardPreco(produto))
+    return criarContainer
 }
 
-const botaoMostrarHortifruti = document.querySelector('.estiloGeralBotoes--filtrarHortifruti');
+function cardPreco(produto){
+        const criarContainerPreco = document.createElement('div')
+        criarContainerPreco.classList.add('preco')
+        
+        const criarSpan = document.createElement('span')
+        criarSpan.innerText = 'R$'
+        
+        const criarPreco = document.createElement('p');
+        criarPreco.classList.add('price-product');
+        criarPreco.innerText = produto.preco
 
-    botaoMostrarHortifruti.addEventListener('click',filtrarHortifruti);
-
-//Filtro para mostrar todos os itens
-function mostrarTodos(){
-
-    montarListaDeProdutos(listaProdutos)
-
+        criarContainerPreco.append(criarSpan,criarPreco)
+        return criarContainerPreco
 }
 
-const botaoMostrarTodos = document.querySelector('.estiloGeralBotoes--mostrarTodos');
 
-    botaoMostrarTodos.addEventListener('click',mostrarTodos)
+function montarCards(listaProdutos){
+    listaProdutos.forEach((produto)=>{
+        criarCard(produto)
+    })
+}
 
+montarCards(listaProdutos)
 
-//Criando evento no botão buscar para filtrar por pesquisa
-const buscarPorPesquisa = document.querySelector('.estiloGeralBotoes--botaoBuscaPorNome')
-const input = document.querySelector('.campoBuscaPorNome')
-console.log(input)
+//Filtrar Hortifruit
 
-buscarPorPesquisa.addEventListener('click',buscarPorNome)
+function hortifruit(){
+    const btnHortifruit = document.querySelector('.hortifruit')
+    btnHortifruit.addEventListener('click',filtrarHortifruit)
+}
 
+function filtrarHortifruit(){
+    const selecionarContainer = document.querySelector('.container-products')
+    selecionarContainer.innerHTML = ''
+ 
+    const listaHortifruit = listaProdutos.filter((produto)=>{
+        return produto.secao === 'Hortifruti'    
+    })
+
+    montarCards(listaHortifruit)
+    calcularTotal(listaHortifruit)
+}
+
+hortifruit()
+
+//Filtrar Panificadora
+
+function panificadora(){
+    const btnPanificadora = document.querySelector('.panificadora');
+    btnPanificadora.addEventListener('click',filtrarPanificadora)
+}
+
+function filtrarPanificadora(){
+    const selecionarContainer = document.querySelector('.container-products')
+    selecionarContainer.innerHTML = ''
+
+    const listarPanificadora = listaProdutos.filter((produto)=>{
+        return produto.secao === 'Panificadora'
+    })
+
+    montarCards(listarPanificadora)
+    calcularTotal(listarPanificadora)
+}
+
+panificadora()
+
+//Filtrar Laticinios
+
+function laticinios(){
+    const btnLaticinios = document.querySelector('.laticinios');
+    btnLaticinios.addEventListener('click',filtrarLaticinios)
+}
+
+function filtrarLaticinios(){
+    const selecionarContainer = document.querySelector('.container-products')
+    selecionarContainer.innerHTML = ''
+
+    const listaLaticinios = listaProdutos.filter((produto)=>{
+        return produto.secao === 'Laticínio'
+    })
+
+    montarCards(listaLaticinios)
+    calcularTotal(listaLaticinios)
+}
+
+laticinios()
+
+//Filtrar Todos
+
+function todosProdutos(){
+    const btnTodosProdutos = document.querySelector('.todos');
+    btnTodosProdutos.addEventListener('click',filtrarTodosProdutos)
+}
+
+function filtrarTodosProdutos(){
+    const selecionarContainer = document.querySelector('.container-products')
+    selecionarContainer.innerHTML = ''
+    montarCards(listaProdutos)
+    calcularTotal(listaProdutos)
+}
+
+todosProdutos()
+
+//Filtrar por Nome 
+
+function buscar(){
+    const btnBusca = document.querySelector('.button-search')
+    btnBusca.addEventListener('click',buscarPorNome)
+}
 
 function buscarPorNome(){
-    
-    const pesquisarProduto = listaProdutos.filter((produto) => {
-    
-        const input = document.querySelector('.campoBuscaPorNome').value
-        let inputGrande = input.toUpperCase()
-        let produtoGrande = produto.nome.toUpperCase()
+    const selecionarContainer = document.querySelector('.container-products')
+    selecionarContainer.innerHTML = ''
+    const selecionarInput = document.querySelector('#search').value
 
-            return (produtoGrande === inputGrande)      
-        });
+    
+    const listarPorNome = listaProdutos.filter((produto)=>{
+        return produto.nome.toLowerCase() === selecionarInput.toLowerCase() 
+    })
 
-        montarListaDeProdutos(pesquisarProduto)
+    montarCards(listarPorNome)
+    calcularTotal(listarPorNome)
 }
 
+buscar()
 
-function somarValores(listaProdutos){
-    
-    const span = document.querySelector('#precoTotal')
-    let precoTotal = 0
-        for(let i = 0; i < listaProdutos.length; i++){
-            precoTotal += listaProdutos[i].preco
-        }
+//Calcular Valor Total 
 
-    return span.innerText = precoTotal
+function calcularTotal(produtos){
+    const selecionarPreco = document.querySelector('.value-price')     
+
+    const soma = produtos.reduce((acumulador,valorAtual)=>{
+        return acumulador + valorAtual.preco
+    },0)
+
+    return selecionarPreco.innerText = soma
 }

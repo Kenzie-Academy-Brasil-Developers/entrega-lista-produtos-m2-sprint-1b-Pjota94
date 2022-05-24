@@ -1,37 +1,53 @@
 const listaProdutos = [
     {
         nome: 'Banana',
-        preco: 2,
+        preco: 4,
         secao: 'Hortifruti',
-        categoria: 'fruta',
-        img: "./src/img/banana.png"
+        img: './../src/img/banana.png'
     },
     {
         nome: 'Morango',
-        preco: 2,
+        preco: 7,
         secao: 'Hortifruti',
-        categoria: 'fruta',
-        img: './src/img/morango.png'
+        img: "./../src/img/morango.png"
     },
     {
         nome: 'Maçã',
-        preco: 2,
+        preco: 4,
         secao: 'Hortifruti',
-        categoria: 'fruta',
-        img: './src/img/zyro-image.png'
+        img: './../src/img/maça.png'
     },
     {
         nome: 'Pão',
-        preco: 4,
+        preco: 5,
         secao: 'Panificadora',
-        categoria: 'Pães',
-        img: './src/img/pao.png'
+        img: './../src/img/pão.png'
     },
     {
         nome: 'Leite',
-        preco: 5,
+        preco: 7,
         secao: 'Laticínio',
-        categoria: 'Leite',
-        img: './src/img/leite.png'
-    }
+        img: './../src/img/leite.png',
+    },
+    {
+        nome: 'Bolo',
+        preco: 10,
+        secao: 'Panificadora',
+        img: './../src/img/bolo.png'
+    },
+
+    {
+        nome: 'Torta de Maçã',
+        preco: 10,
+        secao: 'Panificadora',
+        img: './../src/img/tortaMaça.png'
+    },
+
+    {
+        nome: 'Yorgut de Morango',
+        preco: 3,
+        secao: 'Laticínio',
+        img: './../src/img/YogutMorango.png'
+    },
+    
 ]

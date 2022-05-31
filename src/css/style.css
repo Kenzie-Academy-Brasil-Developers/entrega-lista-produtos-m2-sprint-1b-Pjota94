@@ -1,3 +1,13 @@
+/*-------------------Mobile-------------------*/
+
+
+
+
+
+
+
+/*-------------------Desktop-------------------*/
+
 /*-----Header-----*/
 
 #header{
@@ -24,7 +34,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 44px;
+    margin-bottom: 35px;
 }
 
 .todos, .hortifruit, .panificadora, .laticinios{
@@ -95,7 +105,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 .container-price{
@@ -159,6 +169,11 @@ section{
 
 /*-----Container Products-----*/
 
+.container-parents{
+    display: flex;
+    justify-content: space-evenly
+}
+
 .section-products{
     display: flex;
     flex-direction: column;
@@ -170,12 +185,17 @@ section{
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    width: 1171px;
+    width: 730px;
     
 }
 
 .card-product{
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+.img-products{
+    width: 170px;
+    height: 130px;
 }
 
 .nome-product{
@@ -196,6 +216,53 @@ section{
     margin-bottom: 16px;
 }
 
+/*Inicio estilização componentes*/
+.container-componentes{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.component-product{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #212529;
+    margin-bottom: 3px;
+}
+
+.button-lista-componentes{
+    border: none;
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+    margin-top: -3px;
+    margin-right: 85px;
+    cursor: pointer;
+}
+
+.fa-angle-down{
+
+}
+
+/*Fim estilização componentes*/
+
+/*Inicio estilização lista*/
+
+.ul-lista-componentes{
+    margin-bottom: 10px;
+}
+
+.li-componentes{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #868E96;
+}
+
+/*Fim estilização lista*/
 
 .preco{
     display: flex;
@@ -205,6 +272,170 @@ section{
     font-weight: 500;
     font-size: 12px;
     color: #212529;
+    align-items: center;
 }
 
 
+
+.fa-cart-plus{
+    color: #12B886;;
+}
+
+.button-AddCar{
+    margin-left: 100px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fa-cart-plus:hover{
+    color: #fff;
+}
+
+.button-AddCar:hover{
+    background-color: #12B886;
+    color: #fff;
+}
+
+/*-----Aside-----*/
+
+.container-carrinho{
+    
+}
+
+#aside{
+
+}
+
+.header-carrinho{
+    width: 350px;
+    height: 42px;
+    background: #12B886;
+    border-radius: 12px 12px 0px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.fa-cart-shopping{
+    color: white;
+    margin-left: 15px;
+}
+
+.text-header-carrinho{
+    color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 13px;
+}
+
+.body-carrinho{
+    overflow-y: scroll;
+    height: 275px;
+}
+
+/*--Incio da div do Body Carrinho--*/
+
+.container-body-carrinho{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+    margin-bottom: 20px;
+}
+
+.img-body-carrinho{
+    border-radius: 8px;
+    width: 70px;
+    height: 70px;
+}
+
+.textos-body-carrinho{
+    margin-right: 160px;
+    margin-top: 5px;
+}
+
+.fruit-body-carrinho{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.secao-body-carrinho{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #868E96;
+    margin-bottom: 10px;
+}
+
+.preco-body-carrinho{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.button-body-carrinho{
+    width: 30.39px;
+    height: 25px;
+    background: #F8F9FA;
+    border-radius: 4px;
+    border: none;
+}
+
+.fa-trash{
+    color: #868E96;
+}
+
+.quantity-carrinho{
+    height: 40px;
+    background: #F8F9FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texto-quantity-carrinho{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.numero-quantity-carrinho{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+
+.total-carrinho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.texto-total-carrinho{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.numero-total-carrinho{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    margin-right: 10px;
+}

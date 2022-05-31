@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fe751ccf7f.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -26,23 +27,79 @@
             <button class="button-search"><img src="./src/img/search.png" alt=""></button>
         </div>
     </nav>
+        <section class="section-price">
+            <div class="container-price">
+                <div class="container-alert">
+                    <img class="icone-alert" src="./src/img/alert-circle.png" alt="">
+                    <p class="text-price">Valor total dos produtos da sessão selecionada</p>
+                </div>
+                <div class="box-price">
+                    <span class="span-price">R$</span><p class="value-price"> 38.00</p>
+                </div>
+            </div>
+        </section>
+    <div class="container-parents">
+        <section class="section-products">
+            <div class="container-products">
+        
+            </div>
+        </section>
+        
+        <section class="container-carrinho">
+            <aside id="aside">
+                <div class="header-carrinho">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p class="text-header-carrinho">Carrinho</p>
+                </div>
 
-    <section class="section-price">
-        <div class="container-price">
-            <div class="container-alert">
-                <img class="icone-alert" src="./src/img/alert-circle.png" alt="">
-                <p class="text-price">Valor total dos produtos da sessão selecionada</p>
-            </div>
-            <div class="box-price">
-                <span class="span-price">R$</span><p class="value-price"> 50.00</p>
-            </div>
-        </div>
-    </section>
-    <section class="section-products">
-        <div class="container-products">
-    
-        </div>
-    </section>
+                <div class="body-carrinho">
+                    <div class="container-body-carrinho">
+                        <img class="img-body-carrinho" src="./src/img/banana.png" alt="">
+                        <div class="textos-body-carrinho">
+                            <p class="fruit-body-carrinho">Banana</p>
+                            <p class="secao-body-carrinho">Hortifruit</p>
+                            <p class="preco-body-carrinho">R$ 2,00</p>
+                        </div>
+                        <button class="button-body-carrinho">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="container-body-carrinho">
+                        <img class="img-body-carrinho" src="./src/img/maça.png" alt="">
+                        <div class="textos-body-carrinho">
+                            <p class="fruit-body-carrinho">Maçã</p>
+                            <p class="secao-body-carrinho">Hortifruit</p>
+                            <p class="preco-body-carrinho">R$ 2,00</p>
+                        </div>
+                        <button class="button-body-carrinho">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="container-body-carrinho">
+                        <img class="img-body-carrinho" src="./src/img/morango.png" alt="">
+                        <div class="textos-body-carrinho">
+                            <p class="fruit-body-carrinho">Morango</p>
+                            <p class="secao-body-carrinho">Hortifruit</p>
+                            <p class="preco-body-carrinho">R$ 2,00</p>
+                        </div>
+                        <button class="button-body-carrinho">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quantity-carrinho">
+                    <p class="texto-quantity-carrinho">Quantidade</p>
+                    <p class="numero-quantity-carrinho">1</p>
+                </div>
+
+                <div class="total-carrinho">
+                    <p class="texto-total-carrinho">Total</p>
+                    <p class="numero-total-carrinho">R$ 2.00</p>
+                </div>
+            </aside>
+        </section>
+    </div>
 
     <script src="./src/js/dataProdutos.js"></script>
     <script src="./src/js/script.js"></script>

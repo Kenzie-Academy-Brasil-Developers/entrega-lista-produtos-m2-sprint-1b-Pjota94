@@ -11,6 +11,7 @@ function cardCompleto(produto){
     criarContainer.classList.add('card-product');
 
     const criarImagem = document.createElement('img');
+    criarImagem.classList.add('img-products')
     criarImagem.src = produto.img;
     
     const criarNome = document.createElement('p');
@@ -21,8 +22,35 @@ function cardCompleto(produto){
     criarCategoria.classList.add('category-product');
     criarCategoria.innerText = produto.secao;
 
-    criarContainer.append(criarImagem,criarNome,criarCategoria,cardPreco(produto))
+    criarContainer.append(criarImagem,criarNome,criarCategoria,cardComponentes(produto),cardPreco(produto))
     return criarContainer
+}
+
+function cardComponentes(produto){
+    const criarContainerComponentes = document.createElement('div')
+    criarContainerComponentes.classList.add('container-componentes')
+    
+    const criarComponentes = document.createElement('p')
+    criarComponentes.classList.add('component-product')
+    criarComponentes.innerText = 'Nutrientes:'
+
+    const criarLista = document.createElement('ul');
+    criarLista.classList.add('ul-lista-componentes');
+        produto.componentes.forEach((elem)=>{
+            const criarLiComponentes = document.createElement('li')
+            criarLiComponentes.classList.add('li-componentes')
+            criarLiComponentes.innerText = elem
+            criarLista.appendChild(criarLiComponentes)
+        })
+        
+    //Button para descer lista, fazer dps que terminar tudo.
+    // const criarButtonLista = document.createElement('button');
+    // criarButtonLista.classList.add('button-lista-componentes');
+    // criarButtonLista.innerHTML = '<i class="fa-solid fa-angle-down"></i>'
+
+    
+    criarContainerComponentes.append(criarComponentes,criarLista)
+    return criarContainerComponentes
 }
 
 function cardPreco(produto){
@@ -36,7 +64,11 @@ function cardPreco(produto){
         criarPreco.classList.add('price-product');
         criarPreco.innerText = produto.preco
 
-        criarContainerPreco.append(criarSpan,criarPreco)
+        const CriarButtonAddCart = document.createElement('button');
+        CriarButtonAddCart.classList.add('button-AddCar')
+        CriarButtonAddCart.innerHTML = '<i class="fa-solid fa-cart-plus"></i>'
+
+        criarContainerPreco.append(criarSpan,criarPreco,CriarButtonAddCart)
         return criarContainerPreco
 }
 
@@ -157,7 +189,7 @@ function calcularTotal(produtos){
     const selecionarPreco = document.querySelector('.value-price')     
 
     const soma = produtos.reduce((acumulador,valorAtual)=>{
-        return acumulador + valorAtual.preco
+        return acumulador + Number(valorAtual.preco)
     },0)
 
     return selecionarPreco.innerText = soma

@@ -65,6 +65,7 @@ function cardPreco(produto){
         criarPreco.innerText = produto.preco
 
         const CriarButtonAddCart = document.createElement('button');
+        CriarButtonAddCart.id = produto.id
         CriarButtonAddCart.classList.add('button-AddCar')
         CriarButtonAddCart.innerHTML = '<i class="fa-solid fa-cart-plus"></i>'
 
@@ -98,6 +99,7 @@ function filtrarHortifruit(){
 
     montarCards(listaHortifruit)
     calcularTotal(listaHortifruit)
+    adicionarCarrinho()
 }
 
 hortifruit()
@@ -119,6 +121,7 @@ function filtrarPanificadora(){
 
     montarCards(listarPanificadora)
     calcularTotal(listarPanificadora)
+    adicionarCarrinho()
 }
 
 panificadora()
@@ -140,6 +143,7 @@ function filtrarLaticinios(){
 
     montarCards(listaLaticinios)
     calcularTotal(listaLaticinios)
+    adicionarCarrinho()
 }
 
 laticinios()
@@ -156,6 +160,7 @@ function filtrarTodosProdutos(){
     selecionarContainer.innerHTML = ''
     montarCards(listaProdutos)
     calcularTotal(listaProdutos)
+    adicionarCarrinho()
 }
 
 todosProdutos()
@@ -174,11 +179,13 @@ function buscarPorNome(){
 
     
     const listarPorNome = listaProdutos.filter((produto)=>{
-        return produto.nome.toLowerCase() === selecionarInput.toLowerCase() 
+        const {nome,secao,categoria} = produto
+        return nome.toLowerCase() === selecionarInput.toLowerCase() || secao.toLowerCase() === selecionarInput.toLowerCase() || categoria.toLowerCase() === selecionarInput.toLowerCase()
     })
 
     montarCards(listarPorNome)
     calcularTotal(listarPorNome)
+    adicionarCarrinho()
 }
 
 buscar()
@@ -193,4 +200,86 @@ function calcularTotal(produtos){
     },0)
 
     return selecionarPreco.innerText = soma
+}
+
+//Adicionar ao Carrinho
+const arrayCarrinho = [];
+
+function adicionarCarrinho(){
+    const selectButtonAdd = document.querySelectorAll('.button-AddCar')
+    selectButtonAdd.forEach((produto)=>{
+        produto.addEventListener('click',((event)=>{
+            const selectId = event.currentTarget.id
+            const encontrarProduto = listaProdutos.find((produto)=>{
+                const {id} = produto
+                return id == selectId
+            })
+           arrayCarrinho.push(encontrarProduto)
+           renderizarCarrinho(arrayCarrinho)
+           quantidadeCarrinho()
+           somaCarrinho(arrayCarrinho)
+        }))
+    })
+    
+}
+
+function renderizarCarrinho(arrayCarrinho){
+    const selectCarrinho = document.querySelector('.body-carrinho')
+    selectCarrinho.innerHTML = ''
+    
+    arrayCarrinho.forEach((produto)=>{
+        const criarCardCarrinho = document.createElement('div');
+        criarCardCarrinho.classList.add('container-body-carrinho')
+        criarCardCarrinho.innerHTML = `<img class="img-body-carrinho" src="${produto.img}" alt="">
+                                <div class="textos-body-carrinho">
+                                    <p class="fruit-body-carrinho">${produto.nome}</p>
+                                    <p class="secao-body-carrinho">${produto.secao}</p>
+                                    <p class="preco-body-carrinho">R$ ${produto.preco}</p>
+                                </div>
+                                <button id="${produto.id}" class="button-body-carrinho">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>`
+        selectCarrinho.appendChild(criarCardCarrinho)
+        
+        const selectButtonDel = document.querySelectorAll('.button-body-carrinho')
+        removerCarrinho(selectButtonDel)
+    })
+}
+
+function removerCarrinho(selectButtonDel){
+    
+    selectButtonDel.forEach((button)=>{
+        button.addEventListener('click',((event)=>{
+            const selectId = event.currentTarget.id
+            arrayCarrinho.forEach((produto,index)=>{
+                if(produto.id == selectId){
+                    arrayCarrinho.splice(index,1)
+                    renderizarCarrinho(arrayCarrinho)
+                    quantidadeCarrinho()
+                    somaCarrinho(arrayCarrinho)
+                }
+            })
+        }))
+    })
+}
+
+adicionarCarrinho()
+
+
+//Quantidade de itens no carrinho
+
+function quantidadeCarrinho(){
+    const selectPai = document.querySelector('.body-carrinho')
+    const selectQuantidade = document.querySelector('.numero-quantity-carrinho')
+    selectQuantidade.innerText = selectPai.childElementCount
+}
+
+//Valor total dos itens no carrinho
+
+function somaCarrinho(arrayCarrinho){
+    const selectTotal = document.querySelector('.numero-total-carrinho')
+    const soma = arrayCarrinho.reduce((acumulador,valorAtual)=>{
+        return acumulador + Number(valorAtual.preco)
+    },0)
+    return selectTotal.innerText = soma
 }

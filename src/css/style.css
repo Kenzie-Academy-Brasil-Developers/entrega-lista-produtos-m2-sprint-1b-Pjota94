@@ -1,12 +1,20 @@
-/*-------------------Mobile-------------------*/
-
-
-
-
-
-
+/*--Estilo Scrollbar--*/
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  }
+::-webkit-scrollbar-thumb {
+    background: #12B886; 
+    border-radius: 10px;
+  }
+::-webkit-scrollbar-thumb:hover {
+    background: #12B886;
+  }
 
 /*-------------------Desktop-------------------*/
+
 
 /*-----Header-----*/
 
@@ -242,13 +250,9 @@ section{
     cursor: pointer;
 }
 
-.fa-angle-down{
-
-}
-
 /*Fim estilização componentes*/
 
-/*Inicio estilização lista*/
+/*Inicio estilização lista componentes*/
 
 .ul-lista-componentes{
     margin-bottom: 10px;
@@ -262,7 +266,7 @@ section{
     color: #868E96;
 }
 
-/*Fim estilização lista*/
+/*Fim estilização lista componentes*/
 
 .preco{
     display: flex;
@@ -278,7 +282,8 @@ section{
 
 
 .fa-cart-plus{
-    color: #12B886;;
+    color: #12B886;
+    margin-left: -2px;
 }
 
 .button-AddCar{
@@ -287,6 +292,7 @@ section{
     background-color: transparent;
     cursor: pointer;
     border-radius: 5px;
+    width: 24px;
 }
 
 .fa-cart-plus:hover{
@@ -299,14 +305,6 @@ section{
 }
 
 /*-----Aside-----*/
-
-.container-carrinho{
-    
-}
-
-#aside{
-
-}
 
 .header-carrinho{
     width: 350px;

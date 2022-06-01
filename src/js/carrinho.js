@@ -9,7 +9,7 @@ function adicionarCarrinho(){
                 const {id} = produto
                 return id == selectId
             })
-           arrayCarrinho.push(encontrarProduto)
+           arrayCarrinho.push({...encontrarProduto})
            renderizarCarrinho(arrayCarrinho)
            quantidadeCarrinho()
            somaCarrinho(arrayCarrinho)
@@ -21,7 +21,7 @@ function renderizarCarrinho(arrayCarrinho){
     const selectCarrinho = document.querySelector('.body-carrinho')
     selectCarrinho.innerHTML = ''
     
-    arrayCarrinho.forEach((produto)=>{
+    arrayCarrinho.forEach((produto,index)=>{
         const criarCardCarrinho = document.createElement('div');
         criarCardCarrinho.classList.add('container-body-carrinho')
         criarCardCarrinho.innerHTML = `<img class="img-body-carrinho" src="${produto.img}" alt="">
@@ -41,10 +41,10 @@ function renderizarCarrinho(arrayCarrinho){
 }
 
 function removerCarrinho(selectButtonDel){
-    
-    selectButtonDel.forEach((button)=>{
+        selectButtonDel.forEach((button)=>{
         button.addEventListener('click',((event)=>{
             const selectId = event.currentTarget.id
+            
             arrayCarrinho.forEach((produto,index)=>{
                 if(produto.id == selectId){
                     arrayCarrinho.splice(index,1)

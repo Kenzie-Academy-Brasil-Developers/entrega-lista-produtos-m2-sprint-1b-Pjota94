@@ -12,7 +12,7 @@ function filtrarHortifruit(){
     const listaHortifruit = listaProdutos.filter((produto)=>{
         return produto.secao === 'Hortifruti'    
     })
-
+    
     montarCards(listaHortifruit)
     calcularTotal(listaHortifruit)
     adicionarCarrinho()

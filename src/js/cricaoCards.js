@@ -41,11 +41,6 @@ function cardComponentes(produto){
             criarLiComponentes.innerText = elem
             criarLista.appendChild(criarLiComponentes)
         })
-        
-    //Button para descer lista, fazer dps que terminar tudo.
-    // const criarButtonLista = document.createElement('button');
-    // criarButtonLista.classList.add('button-lista-componentes');
-    // criarButtonLista.innerHTML = '<i class="fa-solid fa-angle-down"></i>'
 
     criarContainerComponentes.append(criarComponentes,criarLista)
     return criarContainerComponentes

@@ -63,6 +63,7 @@ function cardPreco(produto){
         CriarButtonAddCart.innerHTML = '<i class="fa-solid fa-cart-plus"></i>'
 
         criarContainerPreco.append(criarSpan,criarPreco,CriarButtonAddCart)
+        adicionarCarrinho(produto,CriarButtonAddCart)
         return criarContainerPreco
 }
 
@@ -85,4 +86,3 @@ function calcularTotal(produtos){
 
     return selecionarPreco.innerText = soma
 }
-

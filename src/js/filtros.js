@@ -15,7 +15,7 @@ function filtrarHortifruit(){
     
     montarCards(listaHortifruit)
     calcularTotal(listaHortifruit)
-    adicionarCarrinho()
+    // adicionarCarrinho(produto,CriarButtonAddCart)
 }
 
 hortifruit()
@@ -37,7 +37,7 @@ function filtrarPanificadora(){
 
     montarCards(listarPanificadora)
     calcularTotal(listarPanificadora)
-    adicionarCarrinho()
+    // adicionarCarrinho(produto,CriarButtonAddCart)
 }
 
 panificadora()
@@ -59,7 +59,7 @@ function filtrarLaticinios(){
 
     montarCards(listaLaticinios)
     calcularTotal(listaLaticinios)
-    adicionarCarrinho()
+    // adicionarCarrinho(produto,CriarButtonAddCart)
 }
 
 laticinios()
@@ -76,7 +76,7 @@ function filtrarTodosProdutos(){
     selecionarContainer.innerHTML = ''
     montarCards(listaProdutos)
     calcularTotal(listaProdutos)
-    adicionarCarrinho()
+    // adicionarCarrinho(produto,CriarButtonAddCart)
 }
 
 todosProdutos()
@@ -103,7 +103,7 @@ function buscaAutomatica(){
     })
     montarCards(listarPorNome)
     calcularTotal(listarPorNome)
-    adicionarCarrinho()
+    // adicionarCarrinho(produto,CriarButtonAddCart)
 }
 
 buscar()

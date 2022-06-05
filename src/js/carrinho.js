@@ -1,64 +1,61 @@
-const arrayCarrinho = [];
+let arrayCarrinho = []
 
-function adicionarCarrinho(){
-    const selectButtonAdd = document.querySelectorAll('.button-AddCar')
-    selectButtonAdd.forEach((produto)=>{
-        produto.addEventListener('click',((event)=>{
-            const selectId = event.currentTarget.id
-            const encontrarProduto = listaProdutos.find((produto)=>{
-                const {id} = produto
-                return id == selectId
-            })
-           arrayCarrinho.push({...encontrarProduto})
-           renderizarCarrinho(arrayCarrinho)
-           quantidadeCarrinho()
-           somaCarrinho(arrayCarrinho)
-        }))
-    })   
-}
-
-function renderizarCarrinho(arrayCarrinho){
-    const selectCarrinho = document.querySelector('.body-carrinho')
-    selectCarrinho.innerHTML = ''
+function adicionarCarrinho(produto,CriarButtonAddCart){
     
-    arrayCarrinho.forEach((produto,index)=>{
-        const criarCardCarrinho = document.createElement('div');
-        criarCardCarrinho.classList.add('container-body-carrinho')
-        criarCardCarrinho.innerHTML = `<img class="img-body-carrinho" src="${produto.img}" alt="">
-                                <div class="textos-body-carrinho">
-                                    <p class="fruit-body-carrinho">${produto.nome}</p>
-                                    <p class="secao-body-carrinho">${produto.secao}</p>
-                                    <p class="preco-body-carrinho">R$ ${produto.preco}</p>
-                                </div>
-                                <button id="${produto.id}" class="button-body-carrinho">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>`
-        selectCarrinho.appendChild(criarCardCarrinho)
+    CriarButtonAddCart.addEventListener('click', (event)=>{
+        const selectUl = document.querySelector('.body-carrinho')
+        const criandoLi = document.createElement('li')
+        criandoLi.classList.add('container-body-carrinho')
         
-        const selectButtonDel = document.querySelectorAll('.button-body-carrinho')
-        removerCarrinho(selectButtonDel)
+        const img = document.createElement('img')
+        const divTextos = document.createElement('div')
+        const pNome = document.createElement('p')
+        const pSecao = document.createElement('p')
+        const pPreco = document.createElement('p')
+        const button = document.createElement('button')
+    
+        img.src = produto.img
+        pNome.innerText = produto.nome
+        pSecao.innerText = produto.secao
+        pPreco.innerHTML = `R$ ${Number(produto.preco).toFixed()}`
+        button.innerHTML = `<i class="fa-solid fa-trash"></i>`
+    
+        img.classList.add('img-body-carrinho')
+        divTextos.classList.add('textos-body-carrinho')
+        pNome.classList.add('fruit-body-carrinho')
+        pSecao.classList.add('secao-body-carrinho')
+        pPreco.classList.add('preco-body-carrinho')
+        button.classList.add('button-body-carrinho')
+        button.id = produto.id
+        
+        divTextos.append(pNome,pSecao,pPreco)
+        criandoLi.append(img,divTextos,button)
+        selectUl.appendChild(criandoLi)
+        
+        removerCarrinho(button)
+        quantidadeCarrinho()
+        arrayCarrinho.push(produto)
+        somaCarrinho(arrayCarrinho)
     })
 }
 
-function removerCarrinho(selectButtonDel){
-        selectButtonDel.forEach((button)=>{
-        button.addEventListener('click',((event)=>{
-            const selectId = event.currentTarget.id
+function removerCarrinho(button){
+    button.addEventListener('click',(e)=>{
+        const selectUl = document.querySelector('.body-carrinho')
+        const element = e.currentTarget
+        const parentProduct = element.closest(".body-carrinho")
+        const liToRemove = button.parentNode
+        selectUl.removeChild(liToRemove)
+        quantidadeCarrinho()
+
+        const itemIndex = arrayCarrinho.findIndex(
+            (elem) => elem === parentProduct
             
-            arrayCarrinho.forEach((produto,index)=>{
-                if(produto.id == selectId){
-                    arrayCarrinho.splice(index,1)
-                    renderizarCarrinho(arrayCarrinho)
-                    quantidadeCarrinho()
-                    somaCarrinho(arrayCarrinho)
-                }
-            })
-        }))
+          );
+          arrayCarrinho.splice(itemIndex,1)
+          somaCarrinho(arrayCarrinho)
     })
 }
-
-adicionarCarrinho()
-
 
 //Quantidade de itens no carrinho
 

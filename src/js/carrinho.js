@@ -3,6 +3,12 @@ let arrayCarrinho = []
 function adicionarCarrinho(produto,CriarButtonAddCart){
     
     CriarButtonAddCart.addEventListener('click', (event)=>{
+        const selectDivSemProduto = document.querySelector('.div-containter-semProduto')
+        selectDivSemProduto.style.display = 'none'
+        const selectDivComProduto = document.querySelector('.div-container-comProduto')
+        selectDivComProduto.style.display = 'block'
+        const selectAside = document.querySelector('.aside-SemProdutos')
+        selectAside.style.background = 'white'
         const selectUl = document.querySelector('.body-carrinho')
         const criandoLi = document.createElement('li')
         criandoLi.classList.add('container-body-carrinho')
@@ -54,6 +60,14 @@ function removerCarrinho(button){
           );
           arrayCarrinho.splice(itemIndex,1)
           somaCarrinho(arrayCarrinho)
+          if(arrayCarrinho.length === 0){
+            const selectDivSemProduto = document.querySelector('.div-containter-semProduto')
+            selectDivSemProduto.style.display = 'flex'
+            const selectDivComProduto = document.querySelector('.div-container-comProduto')
+            selectDivComProduto.style.display = 'none'
+            const selectAside = document.querySelector('.aside-SemProdutos')
+            selectAside.style.background = '#F8F9FA'
+          }
     })
 }
 

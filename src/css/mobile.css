@@ -246,15 +246,50 @@
     flex-direction: column;
     align-items: center;
 }
-
-#aside{
+/*-Inicio Aside sem produtos-*/
+.aside-SemProdutos{
     margin-left: 13px;
     border: 1px solid #12B886;
     border-radius: 12px;
     width: 352px;
     height: 390px;
     margin-bottom: 20px;
+    background: #F8F9FA;
 }
+
+.div-containter-semProduto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.div-container-comProduto{
+    display: none;
+}
+
+.icone-bag{
+    margin-top: 100px;
+    margin-bottom: 35px;
+    
+}
+
+.texto-bag{
+    color: #868E96;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+}
+/*-Fim Aside sem produtos-*/
+.aside-ComProdutos{
+    margin-left: 13px;
+    border: 1px solid #12B886;
+    border-radius: 12px;
+    width: 352px;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
 
 .header-carrinho{
     width: 350px;

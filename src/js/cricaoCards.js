@@ -33,8 +33,8 @@ function cardComponentes(produto){
     criarComponentes.classList.add('component-product')
     criarComponentes.innerText = 'Nutrientes:'
 
-    const criarLista = document.createElement('ul');
-    criarLista.classList.add('ul-lista-componentes');
+    const criarLista = document.createElement('ol');
+    criarLista.classList.add('ol-lista-componentes');
         produto.componentes.forEach((elem)=>{
             const criarLiComponentes = document.createElement('li')
             criarLiComponentes.classList.add('li-componentes')

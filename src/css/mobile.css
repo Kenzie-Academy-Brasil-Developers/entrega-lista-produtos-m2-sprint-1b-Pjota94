@@ -433,6 +433,7 @@
     background: #FFFFFF;
     box-shadow: 0px 4px 40px -20px rgba(0, 0, 0, 0.25);
     margin-bottom: 39px;
+    margin-top: 0;
 }
 
 .text-header{
@@ -447,8 +448,8 @@
 #nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 10px;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 
 .todos, .hortifruit, .panificadora, .laticinios{
@@ -585,7 +586,7 @@ section{
 
 .container-parents{
     display: flex;
-    justify-content: space-evenly
+    justify-content: center;
 }
 
 .section-products{
@@ -608,8 +609,8 @@ section{
 }
 
 .img-products{
-    width: 170px;
-    height: 130px;
+    width: 238px;
+    height: 175px;
 }
 
 .nome-product{
@@ -660,15 +661,16 @@ section{
 
 /*Inicio estilização lista componentes*/
 
-.ul-lista-componentes{
+.ol-lista-componentes{
     margin-bottom: 10px;
+    padding-left: 11px;
 }
 
 .li-componentes{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 12px;
     color: #868E96;
 }
 
@@ -855,7 +857,7 @@ section{
 }
 
 .section-price{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     margin-bottom: 35px;
@@ -912,7 +914,7 @@ section{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 12px;
     color: #868E96;
 }
 

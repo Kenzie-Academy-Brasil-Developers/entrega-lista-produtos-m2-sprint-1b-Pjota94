@@ -21,7 +21,7 @@ const listaProdutos = [
         preco: '2.00',
         secao: 'Hortifruti',
         categoria: 'fruta',
-        img: "./../src/img/morango.png",
+        img: "./../src/img/unsplash_IK2ep3jMnHA (1).png",
         promocao: false,
         precoPromocao: '0',
         componentes: [

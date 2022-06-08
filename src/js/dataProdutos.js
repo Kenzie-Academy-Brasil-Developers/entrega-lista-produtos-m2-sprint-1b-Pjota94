@@ -5,7 +5,7 @@ const listaProdutos = [
         preco: '2.00',
         secao: 'Hortifruti',
         categoria: 'fruta',
-        img: './../src/img/banana.png',
+        img: './src/img/banana.png',
         promocao: true,
         precoPromocao: '1.00',
         componentes: [

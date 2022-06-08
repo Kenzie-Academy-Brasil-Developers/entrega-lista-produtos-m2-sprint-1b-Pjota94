@@ -21,7 +21,7 @@ const listaProdutos = [
         preco: '2.00',
         secao: 'Hortifruti',
         categoria: 'fruta',
-        img: "./../src/img/unsplash_IK2ep3jMnHA (1).png",
+        img: "./src/img/unsplash_IK2ep3jMnHA (1).png",
         promocao: false,
         precoPromocao: '0',
         componentes: [
@@ -37,7 +37,7 @@ const listaProdutos = [
         preco: '2.00',
         secao: 'Hortifruti',
         categoria: 'fruta',
-        img: './../src/img/maça.png',
+        img: './src/img/maça.png',
         promocao: true,
         precoPromocao: '1.50',
         componentes: [
@@ -53,7 +53,7 @@ const listaProdutos = [
         preco: '4.00',
         secao: 'Panificadora',
         categoria: 'Pães',
-        img: './../src/img/pão.png',
+        img: './src/img/pão.png',
         promocao: true,
         precoPromocao: '2.50',
         componentes: [
@@ -69,7 +69,7 @@ const listaProdutos = [
         preco: '5.00',
         secao: 'Laticínio',
         categoria: 'Leite',
-        img: './../src/img/leite.png',
+        img: './src/img/leite.png',
         promocao: false,
         precoPromocao: '1.00',
         componentes: [
@@ -84,7 +84,7 @@ const listaProdutos = [
         preco: '10.00',
         secao: 'Panificadora',
         categoria: 'Bolos',
-        img: './../src/img/bolo.png',
+        img: './src/img/bolo.png',
         promocao: false,
         precoPromocao: '7.00',
         componentes: [
@@ -100,7 +100,7 @@ const listaProdutos = [
         preco: '10.00',
         secao: 'Panificadora',
         categoria: 'Bolos',
-        img: './../src/img/tortaMaça.png',
+        img: './src/img/tortaMaça.png',
         promocao: false,
         precoPromocao: '7.00',
         componentes: [
@@ -116,7 +116,7 @@ const listaProdutos = [
         preco: '3.00',
         secao: 'Laticínio',
         categoria: 'Leite',
-        img: './../src/img/YogutMorango.png',
+        img: './src/img/YogutMorango.png',
         promocao: false,
         precoPromocao: '1.00',
         componentes: [

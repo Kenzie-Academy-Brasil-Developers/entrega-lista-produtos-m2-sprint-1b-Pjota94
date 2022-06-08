@@ -381,7 +381,7 @@
 }
 
 .quantity-carrinho{
-    height: 40px;
+    height: 35px;
     background: #FFFFFF;
     display: flex;
     justify-content: space-between;
@@ -838,7 +838,7 @@ section{
 }
 
 .quantity-carrinho{
-    height: 40px;
+    height: 35px;
     background: #fff;
     display: flex;
     justify-content: space-between;
